@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Surprise! Phishing simulation</title>
+<style>
+:root{--bg:#eef2f7;--ink:#14213d;--mut:#4a5670;--card:#fff;--red:#d62839;--hook:#ffd23f;--ok:#1f8a5b;--line:#d5dce8}
+@media(prefers-color-scheme:dark){:root{--bg:#0f1830;--ink:#eef2f7;--mut:#aab6cf;--card:#18244a;--line:#2b3a68;--hook:#c9a227}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,"Segoe UI",Roboto,sans-serif;padding:max(20px,env(safe-area-inset-top)) 18px 40px}
+main{max-width:640px;margin:0 auto}
+h1{font-size:clamp(44px,13vw,76px);line-height:.95;margin:18px 0 8px;font-weight:900;color:var(--red);letter-spacing:-.02em;animation:pop .5s cubic-bezier(.2,1.6,.4,1) both}
+@keyframes pop{from{transform:scale(.6) rotate(-4deg);opacity:0}}
+@media(prefers-reduced-motion:reduce){h1{animation:none}}
+h2{font-size:22px;margin:34px 0 10px}
+p{margin:0 0 12px;color:var(--mut)}
+.lead{font-size:20px;color:var(--ink);font-weight:600}
+.msg{background:var(--card);border:2px solid var(--line);border-radius:18px 18px 18px 4px;padding:16px 18px;margin:18px 0;font-size:18px;color:var(--ink)}
+mark{background:var(--hook);color:#14213d;padding:0 3px;border-radius:3px}
+.flag{background:var(--card);border-left:5px solid var(--red);padding:10px 14px;margin:10px 0;border-radius:0 10px 10px 0}
+.flag b{display:block;color:var(--ink)}
+.flag span{color:var(--mut)}
+ul.kinds{padding-left:20px;margin:0 0 12px;color:var(--mut)}
+ul.kinds li{margin:6px 0}
+ul.kinds b{color:var(--ink)}
+ol.steps{list-style:none;counter-reset:s;padding:0;margin:0}
+ol.steps li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px 12px 52px;margin:10px 0;position:relative;color:var(--mut)}
+ol.steps li::before{content:counter(s);position:absolute;left:12px;top:12px;width:28px;height:28px;border-radius:50%;background:var(--ok);color:#fff;font-weight:800;display:grid;place-items:center}
+ol.steps.warn li::before{background:var(--red)}
+ol.steps b{color:var(--ink)}
+.end{margin-top:34px;padding:16px 18px;border-radius:14px;background:var(--ok);color:#fff}
+.end p{color:#fff;margin:0 0 8px}
+.end p:last-child{margin:0}
+</style>
+</head>
+<body>
+<main>
+  <h1>Surprise!</h1>
+  <p class="lead">There is no voucher. This was a phishing simulation.</p>
+  <p>The link you just clicked was part of a security awareness test by <b class="co">our company</b>. This page did not collect your password or any personal information. A real scam would have.</p>
+
+  <div class="msg">🎁 Congrats! You won <mark>₱5,000</mark> in gift vouchers (Foodpanda, Grab, Starbucks). Claim now, <mark>offer expires today</mark>: <mark>bit.ly/claim-5000</mark></div>
+
+  <h2>Why this message was a red flag</h2>
+  <div class="flag"><b>It was too good to be true</b><span>₱5,000 free from three big brands? Nobody gives away money for nothing. Free prizes and rewards are the most common bait in scams.</span></div>
+  <div class="flag"><b>It created urgency</b><span>“Expires today” pushes you to act before you think. Attackers rely on pressure, fear and excitement to switch off your judgment.</span></div>
+  <div class="flag"><b>The sender was unknown</b><span>The message was generic, had no name, and came from someone you could not verify. Real companies address you by name and send from official channels.</span></div>
+  <div class="flag"><b>The link was suspicious</b><span>Shortened links hide where they lead. Fake sites often use addresses that look almost right, like a brand name with extra words or a different ending.</span></div>
+  <div class="flag"><b>It borrowed trusted brand names</b><span>Attackers use famous names to make a fake message feel safe. A logo or a brand name proves nothing.</span></div>
+
+  <h2>What is phishing?</h2>
+  <p>Phishing is when an attacker pretends to be someone you trust to trick you into clicking a link, opening a file, or giving up information. It works because it targets people, not computers. It comes in many forms:</p>
+  <ul class="kinds">
+    <li><b>Email phishing:</b> fake messages from banks, delivery companies, your boss or IT.</li>
+    <li><b>Smishing:</b> the same trick by SMS, Messenger, Viber or WhatsApp.</li>
+    <li><b>Vishing:</b> a phone call from someone claiming to be your bank, a courier or tech support.</li>
+    <li><b>QR phishing:</b> a QR code on a poster or message that leads to a fake site.</li>
+    <li><b>Spear phishing and impersonation:</b> a targeted message that looks like it is from a coworker or manager, often asking for urgent payments or files.</li>
+  </ul>
+
+  <h2>What could have happened</h2>
+  <p>If this were real, one click could lead to a fake login page that steals your email, Facebook, GCash or bank password. It could also install malware on your phone or computer. If you use the same device or password for work, attackers could reach company email, files and customer data, send scams in your name, or lock systems with ransomware. One click from one person is enough.</p>
+
+  <h2>Think before you click</h2>
+  <ol class="steps">
+    <li><b>Pause.</b> Who sent this? Was I expecting it? Does it pressure me to hurry?</li>
+    <li><b>Check the link.</b> Press and hold on a phone, or hover on a computer, to see the real address before you open it.</li>
+    <li><b>Verify another way.</b> Open the official app or website yourself, or call the company using a number you already know. Do not use the details in the message.</li>
+    <li><b>Report it.</b> Forward it to <b class="ct">the IT team</b>, then delete it. Do not share it in group chats.</li>
+  </ol>
+
+  <h2>If you clicked or entered a password</h2>
+  <ol class="steps warn">
+    <li><b>Tell IT right away.</b> Reporting quickly limits the damage, and nobody is in trouble for being honest.</li>
+    <li><b>Change the password</b> on that account and on any other account that uses the same one.</li>
+    <li><b>Turn on two-step verification</b> and check for unknown logins or forwarding rules in your email.</li>
+  </ol>
+
+  <h2>Habits that protect you every day</h2>
+  <ul class="kinds">
+    <li>Use a different strong password for each account, and keep them in a password manager.</li>
+    <li>Turn on multi-factor authentication (MFA) wherever it is offered, so a stolen password alone is not enough.</li>
+    <li>Keep your phone, computer and apps updated.</li>
+    <li>Never share OTP codes, even with someone who says they are from the bank or IT.</li>
+    <li>When in doubt, ask. A two-minute check is cheaper than a breach.</li>
+  </ul>
+
+  <div class="end">
+    <p><b>Nobody is blamed for clicking. The goal is that we all learn.</b></p>
+    <p>Every report you make helps protect the whole team.</p>
+    <p><b>This is only a simulation for Santuza Enterprise.</b> No real vouchers were offered and no data was collected.</p>
+  </div>
+</main>
+<script>
+// Edit these two lines before you publish
+var COMPANY='Santuza Enterprise', CONTACT='the IT team';
+document.querySelectorAll('.co').forEach(function(e){e.textContent=COMPANY});
+document.querySelectorAll('.ct').forEach(function(e){e.textContent=CONTACT});
+</script>
+</body>
+</html>
